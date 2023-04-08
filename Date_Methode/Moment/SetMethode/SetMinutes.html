@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set minutes</title>
+</head>
+<body>
+    <script>
+         const date = new Date()
+        console.log("date : ", date);
+
+        let minutes = date.getMinutes()
+        console.log("minutes : ", minutes);
+
+        let setMinutes = date.setMinutes(minutes + 110)
+        console.log("setMinutes : ", setMinutes);
+
+        const newDate = new Date(setMinutes)
+        console.log("new Date OBject  : ", newDate);
+
+        console.log("newMinutes : ",newDate.getHours() , newDate.getMinutes());
+    </script>
+</body>
+</html>

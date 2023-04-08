@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+
+    <form id="rigister" action="#" method="post">
+        <label for="fname">First Name : </label>
+        <input type="text" name="fname" placeholder="First Name" id="fname"/>
+        <span id="fnameErr"></span>
+        <br />
+
+        <label for="sname">Secound Name : </label>
+        <input type="text" name="sname" placeholder="Secound Name" id="sname"/>
+        <span id="snameErr"></span>
+        <br />
+
+        <label for="pass">Password : </label>
+        <input type="password" name="pass" placeholder="Password" id="pass"/>
+        <span id="passErr"></span>
+        <br />
+
+        <input type="submit" value="Signin"/>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#rigister").submit(function() {
+                console.log("submit data");
+
+                var fname = $("#fname").val()
+                // console.log("fname : " , fname);
+                var sname = $("#sname").val()
+                var pass = $("#pass").val()
+
+                // regular expretion
+                let fnameReg = /^[a-zA-Z ]{2,30}$/
+                var passReg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+                if(fname === "") {
+                    $("#fnameErr").html("First name is Requiredf Field.")
+                }else{
+                    if(fnameReg.test(fname)) {
+                        $("#fnameErr").html("ERTERT")
+                    }else{
+                        $("#fnameErr").html("Please Enter Valid First Name ")
+                    }
+                }
+
+                if(sname === "") {
+                    $("#snameErr").html("Secound name is Requiredf Field.")
+                }else{
+                    if(fnameReg.test(sname)) {
+                        $("#snameErr").html("")
+                    }else{
+                        $("#snameErr").html("Please Enter Valid Secound Name ")
+                    }
+                }
+
+                if(pass === "" ) {
+                    $("#passErr").html("Password  is Required.")
+                }else{
+                    // console.log(pass.length);
+                    if(passReg.test(pass)) {
+                        $("#passErr").html("")
+                    }else{
+                        $("#passErr").html("Please Enter Valid Password ")
+                    }
+                }
+                return false;
+            })
+        })
+    </script>
+    
+
+  
+</body>
+</html>

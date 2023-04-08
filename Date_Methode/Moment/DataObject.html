@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date object </title>
+
+
+</head>
+
+<body>
+
+    <script>
+        const dateObject = new Date();
+        console.log("date Object : ", dateObject);
+
+        const dateObject1 = new Date(2024, 11, 25, 5, 23, 50);
+        console.log("dateObject1 ", dateObject1);
+
+        // two time zone different in minutes
+        let dif = dateObject.getTimezoneOffset()
+        console.log("getTimezoneOffset ", dif);
+
+        // <p>Create a myMonth() method, returning the the month's name:</p>
+        Date.prototype.myMonth = function () {
+            if (this.getMonth() == 0) { return "January" };
+            if (this.getMonth() == 1) { return "February" };
+            if (this.getMonth() == 2) { return "March" };
+            if (this.getMonth() == 3) { return "April" };
+            if (this.getMonth() == 4) { return "May" };
+            if (this.getMonth() == 5) { return "June" };
+            if (this.getMonth() == 6) { return "July" };
+            if (this.getMonth() == 7) { return "August" };
+            if (this.getMonth() == 8) { return "September" };
+            if (this.getMonth() == 9) { return "October" };
+            if (this.getMonth() == 10) { return "November" };
+            if (this.getMonth() == 11) { return "December" };
+        };
+
+        const da = new Date();
+        console.log(">> ", da.myMonth());
+        console.log("myMonth >> : ", da);
+
+
+
+    </script>
+</body>
+
+</html>

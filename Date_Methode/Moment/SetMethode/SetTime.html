@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTime</title>
+</head>
+
+<body>
+
+    <script>
+        const date = new Date()
+        console.log("date : ", date);
+
+        let Hours = date.getHours()
+        console.log("time : ", Hours);
+
+        let setTime = date.setHours(Hours + 1)
+        console.log("newTime : ", setTime);
+
+        const newDate = new Date(setTime)
+        console.log("new Date OBject  : ", newDate);
+
+        console.log("new time : ", newDate.getHours() ," : " ,newDate.getMinutes() );
+
+    </script>
+
+</body>
+
+</html>

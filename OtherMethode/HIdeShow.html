@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide ANd Show</title>
+
+    <link rel="stylesheet" href="methode_style.css">
+</head>
+
+<body>
+
+    <p id="first_paragraph">first_paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ea
+        perspiciatis, quaerat repellendus sapiente a temporibus molestiae, quidem rerum error voluptatibus cumque
+        distinctio, quia deserunt.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ea perspiciatis, quaerat repellendus sapiente a
+        temporibus molestiae, quidem rerum error voluptatibus cumque distinctio, quia deserunt.</p>
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ea perspiciatis, quaerat repellendus sapiente a
+        temporibus molestiae, quidem rerum error voluptatibus cumque distinctio, quia deserunt.</p>
+
+    <div class="boxOne">First Box Toggle</div>
+
+    <button id="paragraph_remove">Hide</button>
+    <button id="paragraph_display">show</button>
+    <button id="paragraph_toggle">Toggle</button>
+    <button id="all_toggle">All_Toggle</button>
+    <button id="select_all">toggle all element</button>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script> -->
+
+
+
+    <script>
+        // ************* hide() ***********
+        $(document).ready(function () {
+            // 1
+            $("#first_paragraph").click(function () {
+                $("#first_paragraph").hide()
+            })
+
+            // 2
+            $("#paragraph_remove").click(function () {
+                $("#first_paragraph").hide()
+            })
+        })
+
+        // ************* show() ***********
+        $(document).ready(function () {
+            $("#paragraph_display").click(function () {
+                $("#first_paragraph").show()
+            })
+        })
+
+        // ************* toggle() ***********
+        $(document).ready(function () {
+            $("#paragraph_toggle").click(function () {
+                $("#first_paragraph").toggle()
+            })
+        })
+
+        // *********** All_Remove **********
+        $(document).ready(function () {
+            $("#all_toggle").click(function () {
+                $("p").toggle()
+            })
+        })
+
+        // ********* using class selectore **********
+        $(document).ready(function () {
+            $(".boxOne").hover(function () {
+                $(".boxOne").toggle()
+            })
+        })
+        // ******** select all element ***********
+        $(document).ready(function () {
+            $("#select_all").hover(function () {
+                $("*").toggle()
+            })
+        })
+    </script>
+</body>
+
+</html>
